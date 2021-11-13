@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" type="image/png" href="{{url_for('static', filename='images/nuevaerafavicon.png')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/responsive.bootstrap4.min.css')}}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{url_for('static', filename='fontawesome-free/css/all.min.css')}}">
+	<title>{{ datos.0 }}</title>
+</head>
+<body class="hold-transition sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white sticky-top navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Notificaciones Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-bs-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+          <span class="dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <!-- Usuario Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-bs-toggle="dropdown" href="#">
+          <i class="fas fa-user-circle"></i>
+          <span>Usuario</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-end">
+          <span class="dropdown-header">Opciones de usuario</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-cog mr-2"></i>Configuración
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="<?php echo base_url() ?>/usuarios/perfil" class="dropdown-item">
+            <i class="fas fa-user mr-2"></i>Mi Perfil
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="{{url_for('home')}}" class="dropdown-item">
+            <i class="fas fa-sign-out-alt mr-2"></i>Cerrar Sesión
+          </a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="{{url_for('dashboard')}}" class="brand-link">
+      <img src="{{url_for('static', filename='images/nuevaerafavicon.png')}}" alt="Logo Nueva Era" class="brand-image img-circle elevation-3">
+      <span class="brand-text font-weight-light">Nueva Era</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{{url_for('static', filename='images/user1-128x128.jpg')}}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="" class="d-block">Hola Yuri!</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="{{url_for('dashboard')}}" class="nav-link dashboard">
+              <i class="nav-icon fas fa-home"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link cuenta">
+              <i class="nav-icon fas fa-user"></i>
+              <p>Cuenta
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview s-cuenta">
+              <li class="nav-item">
+                <a href="{{url_for('perfil')}}" class="nav-link perfil">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Mi perfil</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link usuarios">
+              <i class="nav-icon fas fa-users"></i>
+              <p>Usuarios
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview s-usuarios">
+              <li class="nav-item">
+                <a href="{{url_for('usuarios')}}" class="nav-link usuarios">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Usuarios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url_for('roles')}}" class="nav-link roles">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Roles</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link construcciones">
+              <i class="nav-icon far fa-building"></i>
+              <p>Construcciones
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview s-construcciones">
+              <li class="nav-item">
+                <a href="{{url_for('construc_priv')}}" class="nav-link priv">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Privadas</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url_for('construc_pub')}}" class="nav-link pub">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Publicas</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="{{url_for('actualizar')}}" class="nav-link actualizar">
+              <i class="nav-icon fas fa-sync-alt"></i>
+              <p>Actualizaciones</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url_for('empleados')}}" class="nav-link empleados">
+              <i class="nav-icon fas fa-user-cog"></i>
+              <p>Empleados</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url_for('vista_pbi')}}" class="nav-link vista_pbi">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>Vista PB</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url_for('reportes')}}" class="nav-link reportes">
+              <i class="nav-icon far fa-chart-bar"></i>
+              <p>Reportes</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url_for('home')}}" class="nav-link">
+              <i class="nav-icon fas fa-sign-out-alt"></i>
+              <p>Cerrar Sesión</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+  {% block content %}
+  {% endblock %}

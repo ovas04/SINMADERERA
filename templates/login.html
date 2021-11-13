@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" type="image/png" href="{{url_for('static', filename='images/nuevaerafavicon.png')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+	<!-- Font Awesome -->
+  	<link rel="stylesheet" href="{{url_for('static', filename='fontawesome-free/css/all.min.css')}}">
+	<title>Maderera Nueva Era | Login</title>
+</head>
+<body>
+	<div class="container-fluid fondo-login">
+		<div class="container">
+			<div class="row pt-3">
+				<img class="logo position-relative top-0 end-0" src="{{url_for('static', filename='images/logonuevaera2.png')}}" alt="">
+			</div>
+			<div class="row">
+				<div class="col-md-7">
+					<img class="d-none d-sm-none d-md-block" src="{{url_for('static', filename='images/logo-login.jpg')}}" alt="">
+				</div>
+				<div class="col-md-5 login">
+					<h3 class="text-center mb-3">Iniciar Sesión</h3>
+					<div class="icon d-flex align-items-center justify-content-center">
+						<span class="far fa-user"></span>
+					</div>
+					<form action="">
+						<div class="mb-3">
+							<label for="" class="form-label">Usuario:</label>
+							<div class="input-group">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<input type="text" class="form-control" placeholder="Nombre de usuario" required>
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="" class="form-label">Password:</label>
+							<div class="input-group">
+								<span class="input-group-text"><i class="fas fa-lock"></i></span>
+								<input type="password" class="form-control" placeholder="********" required>
+							</div>
+						</div>
+						<div class="mt-4">
+							<a type="submit" class="btn btn-outline-success form-control" href="{{url_for('dashboard')}}">Ingresar</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="{{url_for('static', filename='js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+</html>

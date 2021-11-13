@@ -1,0 +1,89 @@
+{% extends "header_admin.html" %}
+{% block content %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1><i class="fas fa-users"></i> {{ datos.1 }}</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="<?php echo base_url() ?>/dashboard">Home</a></li>
+							<li class="breadcrumb-item active">Usuarios</li>
+						</ol>
+					</div>
+				</div>
+			</div><!-- /.container-fluid -->
+		</section>
+
+		<!-- Main content -->
+	<section class="content">
+		<div class="container-fluid">
+			<div class="card">
+							<div class="card-header">
+								<h3 class="card-title mt-1"><strong>Eliminar a Luis Mayta</strong></h3>
+							</div>
+							<!-- /.card-header -->
+							<div class="card-body">
+								<div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+									<div class="row" id="tab_usuarios">
+										<div class="col-sm-12">
+										<p>Al eliminar al usuario este no podrá usar la plataforma. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis at consequatur molestias ipsam nesciunt voluptas! Debitis ducimus cumque veniam rerum tenetur quisquam quod. Eveniet suscipit vitae dicta officiis praesentium dolore.</p>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit minus nulla quisquam dignissimos laudantium molestias labore, illo minima magni quia nobis. Magni dolor, cupiditate deleniti placeat velit sint voluptates fugiat?</p>
+                                        <table id="tab_roles" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th>Código</th>
+                                                    <th>Nombre</th>
+													<th>Apellido</th>
+                                                    <th>Rol</th>
+                                                    <th>Permisos</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>023451</td>
+                                                    <td>Luis</td>
+													<td>Mayta Carhuancho</td>
+                                                    <td>Vendedor</td>
+                                                    <td>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item bg-transparent">PermisoA</li>
+                                                            <li class="list-group-item bg-transparent">PermisoB</li>
+                                                            <li class="list-group-item bg-transparent">PermisoC</li>
+                                                            <li class="list-group-item bg-transparent">PermisoD</li>
+                                                            <li class="list-group-item bg-transparent">PermisoE</li>
+                                                        </ul>
+                                                    </td>
+                                                  </tr>
+                                            </tbody>
+                                        </table>
+										<p>Seleccione el tipo de eliminación</p>
+										<button type="button" class="btn btn-outline-danger btn-sm btn-eli-usu" rl="">Temporal del Sistema</button>
+                                        <button type="button" class="btn btn-danger btn-sm btn-eli-usu" rl="">Definitiva del Sistema</button>
+										</div>
+							</div>
+						</div>
+							</div>
+							<!-- /.card-body -->
+						</div>
+			</div>
+		</section>
+</div>
+
+</body>
+<script src="{{url_for('static', filename='js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/adminlte.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.responsive.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/functions_usuario.js')}}"></script>
+<script src="{{url_for('static', filename='js/sweetalert2.min.js')}}"></script>
+</html>
+{% endblock %}

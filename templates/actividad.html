@@ -1,0 +1,344 @@
+{% extends "header_admin.html" %}
+{% block content %}
+	<!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1><i class="fas fa-user-cog"></i> {{ datos.1 }}</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="{{ url_for('dashboard') }}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url_for('empleados') }}">Empleados</a></li>
+                            <li class="breadcrumb-item active">{{ datos.1 }}</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Datos del empleado</h3>
+                        <div class="card-tools">
+		                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+		                        <i class="fas fa-minus"></i>
+		                    </button>
+		                </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table id="tab_info-empleado" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                                        <tbody>
+	                                        <input type="hidden" id="id_alum" name="id_alum" value="<?php echo $data['alumno']['id_persona'] ?>">
+	                                        <tr>
+	                                            <th><span class="fas fa-user-cog"></span> Empleado</th>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <th><span class="fas fa-bookmark"></span> Rol</th>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <th><span class="fas fa-id-card"></span> DNI</th>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <th><span class="fas fa-envelope"></span> Correo Electrónico</th>
+	                                            <td></td>
+	                                        </tr>
+	                                        <tr>
+	                                            <th><span class="fas fa-mobile-alt"></span> Celular</th>
+	                                            <td></td>
+	                                        </tr>
+                                    	</tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Actividades del empleado</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table id="tab_actividades" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                                        <thead>
+                                            <tr role="row">
+                                                <th>Código</th>
+                                                <th>Nombre</th>
+                                                <th>Ubicación</th>
+                                                <th>Dirección</th>
+                                                <th>Fecha</th>
+                                                <th>Estado</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                          
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                        	<div class="row">
+	                    		<div class="col-md-6 mb-2">
+		                   			<div class="progress-group">
+                                        <span>Calculos</span>
+                                        <span class="float-right">
+                                            <b id="prct">47%</b></span>
+                                        </span>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar bg-warning progress-bar-striped" style="width: 47%;"></div>
+                                        </div>
+                                    </div>
+	                    		</div>
+	                    		<div class="col-md-6 mb-2">
+	                    			<div class="row">
+	                    				<div class="col-md-4">
+		                    				<span>Llamar atención:</span>
+		                    			</div>
+		                    			<div class="col-md-4">
+		                    				<select class="form-select form-control-sm" name="" id="">
+		                    					<option selected>Seleccione</option>
+		                    					<option value="0">Postiva</option>
+		                    					<option value="1">Negativa</option>
+		                    				</select>
+		                    			</div>
+		                    			<div class="col-md-4">
+		                    				<button class="btn btn-sm btn-outline-success"><span class="fas fa-envelope"></span> Enviar</button>
+		                    			</div>
+	                    			</div>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col-md-4 mb-2">
+	                    			<div class="row">
+	                    				<div class="col-md-8">
+		                    				<span>Total construcciones:</span>
+		                    			</div>
+		                    			<div class="col-md-4">
+		                    				<span id="tot_a" class="badge badge-success">15</span>
+		                    			</div>
+	                    			</div>
+	                    		</div>
+	                    		<div class="col-md-4 mb-2">
+	                    			<div class="row">
+	                    				<div class="col-md-8">
+		                    				<span>Total públicas:</span>
+		                    			</div>
+		                    			<div class="col-md-4">
+		                    				<span id="tot_t" class="badge badge-warning">7</span>
+		                    			</div>
+	                    			</div>
+	                    		</div>
+	                    		<div class="col-md-4 mb-2">
+	                    			<div class="row">
+	                    				<div class="col-md-8">
+		                    				<span>Total privadas:</span>
+		                    			</div>
+		                    			<div class="col-md-4">
+		                    				<span id="tot_fj" class="badge badge-info">8</span>
+	                    				</div>
+	                    			</div>
+	                    		</div>
+	                    	</div>
+                    	</div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+
+                <div class="modal fade" id="modal-empleado-d" data-bs-backdrop="static" aria-modal="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Información de Empleado</h4>
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="form-empleado">
+                                    <input type="hidden" id="id_emple-d" name="id_emple-d">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-8 mb-0">
+                                            <div class="mb-3">
+                                                <label for="nom_emple-d" class="form-label">Nombres:</label>
+                                                <input type="text" id="nom_emple-d" class="form-control form-control-sm" name="nom_emple-d" readonly>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="ape_emple-d" class="form-label">Apellidos:</label>
+                                                <input type="text" id="ape_emple-d" class="form-control form-control-sm" name="ape_emple-d" readonly>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="dni_emple-d" class="form-label">DNI:</label>
+                                                    <input type="text" id="dni_emple-d" class="form-control form-control-sm" name="dni_emple-d" readonly>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="fech_emple-d" class="form-label">Fecha de nacimiento:</label>
+                                                    <input type="date" id="fech_emple-d" class="form-control form-control-sm" name="fech_emple-d" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-4 mb-0">
+                                            <div class="img">
+                                                <img class="img-thumbnail rounded mx-auto d-block mb-2" id="img_empleado_d" src="#" alt="" style="width: 70%;">
+                                                <div class="text-center">
+                                                     <a id="actividad" class="btn btn-outline-warning" href="#">Ver Actividad</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="rol-d" class="form-label">Rol:</label>
+                                            <input type="text" id="rol-d" class="form-control form-control-sm" name="rol-d" readonly>
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="f-inicio-d" class="form-label">Fech. inicio:</label>
+                                            <input type="date" id="f-inicio-d" class="form-control form-control-sm" name="f-inicio-d" readonly>
+                                        </div>
+                                        <div class="form-group col-md-5">
+                                            <label for="mail_emple-d" class="form-label">Correo Electrónico:</label>
+                                            <input type="email" id="mail_emple-d" class="form-control form-control-sm" name="mail_emple-d" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="telef_emple-d" class="form-label">Teléfono:</label>
+                                            <input type="phone" id="telef_emple-d" class="form-control form-control-sm" name="telef_emple-d" readonly>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="distr_emple-d" class="form-label">Distrito:</label>
+                                            <input type="text" id="distr_emple-d" class="form-control form-control-sm" name="distr_emple-d" readonly>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="estado-d" class="form-label">Estado:</label>
+                                            <input type="text" id="estado-d" class="form-control form-control-sm" name="estado-d" readonly>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+
+                <div class="modal fade" id="modal-empleado" data-bs-backdrop="static" aria-modal="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Registrar Empleado</h4>
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="form-empleado">
+                                    <input type="hidden" id="id_emple" name="id_emple">
+                                    <div class="mb-3">
+                                        <label for="nom_emple" class="form-label">Nombres:</label>
+                                        <input type="text" id="nom_emple" class="form-control" name="nom_emple" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="ape_emple" class="form-label">Apellidos:</label>
+                                        <input type="text" id="ape_emple" class="form-control" name="ape_emple" required>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="dni_emple" class="form-label">DNI:</label>
+                                            <input type="text" id="dni_emple" class="form-control" name="dni_emple" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="fech_emple" class="form-label">Fecha de nacimiento:</label>
+                                            <input type="date" id="fech_emple" class="form-control" name="fech_emple" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="mail_emple" class="form-label">Correo Electrónico:</label>
+                                        <input type="email" id="mail_emple" class="form-control" name="mail_emple" required>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="telef_emple" class="form-label">Teléfono:</label>
+                                            <input type="phone" id="telef_emple" class="form-control" name="telef_emple" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="distr_emple" class="form-label">Distrito:</label>
+                                            <input type="text" id="distr_emple" class="form-control" name="distr_emple" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="estado" class="form-label">Estado:</label>
+                                        <select name="estado" id="estado" class="form-select">
+                                            <option value="1">Activado</option>
+                                            <option value="2">Desactivado</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-success btn-form"><span class="btn-text">Registrar</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+	<footer class="main-footer">
+        <div class="float-right d-none d-sm-block">
+            <b>Version</b> 2.0.1
+        </div>
+        <strong>Copyright &copy; 2021 <a href="#">WebMaster-ANR</a>.</strong> All rights
+    reserved.
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+    </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+</body>
+<script src="{{url_for('static', filename='js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/adminlte.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.responsive.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/functions_actividad.js')}}"></script>
+<script src="{{url_for('static', filename='js/sweetalert2.min.js')}}"></script>
+</html>
+{% endblock %}

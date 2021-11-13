@@ -1,0 +1,117 @@
+{% extends "header_admin.html" %}
+{% block content %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1><i class="fas fa-user-tag"></i> {{ datos.1 }}</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="<?php echo base_url() ?>/dashboard">Home</a></li>
+							<li class="breadcrumb-item active">{{ datos.1 }}</li>
+						</ol>
+					</div>
+				</div>
+			</div><!-- /.container-fluid -->
+		</section>
+
+		<!-- Main content -->
+	<section class="content">
+		<div class="container-fluid">
+			<div class="card">
+							<div class="card-header">
+								<h3 class="card-title mt-1">Lista de Roles</h3>
+							</div>
+							<!-- /.card-header -->
+							<div class="card-body">
+								<div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+									<div class="row">
+										<div class="col-sm-12">
+											<table id="tab_roles" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+												<thead>
+													<tr role="row">
+														<th>#</th>
+														<th>Nombre del rol</th>
+														<th>Descripción</th>
+														<th>Permisos</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Administrador</td>
+                                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro suscipit eum, obcaecati minus voluptate modi praesentium rem sunt quae odio odit unde. Eveniet ad mollitia quasi doloribus eligendi perspiciatis culpa.</td>
+                                                        <td>
+                                                            <ul class="list-group list-group-flush">
+                                                                <li class="list-group-item bg-transparent">PermisoA</li>
+                                                                <li class="list-group-item bg-transparent">PermisoB</li>
+                                                                <li class="list-group-item bg-transparent">PermisoC</li>
+                                                                <li class="list-group-item bg-transparent">PermisoD</li>
+                                                                <li class="list-group-item bg-transparent">PermisoE</li>
+                                                            </ul>
+                                                        </td>
+                                                      </tr>
+                                                      <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Asistente de Ventas</td>
+                                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae magni ea accusantium unde magnam, nisi perferendis obcaecati deleniti aperiam alias et eum, velit ipsam accusamus quos. Non mollitia ut corporis!</td>
+                                                        <td>
+                                                            <ul class="list-group list-group-flush">
+                                                                <li class="list-group-item bg-transparent">PermisoA</li>
+                                                                <li class="list-group-item bg-transparent">PermisoB</li>
+                                                                <li class="list-group-item bg-transparent">PermisoC</li>
+                                                            </ul>
+                                                        </td>
+                                                      </tr>
+                                                      <tr>
+                                                        <th scope="row">3</th>
+                                                        <td>Asistente de Gerencia</td>
+                                                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error accusantium facere sint dolore aperiam corrupti, maiores vel consectetur perspiciatis consequatur itaque aut suscipit eos facilis eum esse minima porro libero.</td>
+                                                        <td>
+                                                            <ul class="list-group list-group-flush">
+                                                                <li class="list-group-item bg-transparent">PermisoA</li>
+                                                                <li class="list-group-item bg-transparent">PermisoD</li>
+                                                                <li class="list-group-item bg-transparent">PermisoE</li>
+                                                            </ul>
+                                                        </td>
+                                                      </tr>
+                                                      <tr>
+                                                        <th scope="row">4</th>
+                                                        <td>Vendedor</td>
+                                                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error accusantium facere sint dolore aperiam corrupti, maiores vel consectetur perspiciatis consequatur itaque aut suscipit eos facilis eum esse minima porro libero.</td>
+                                                        <td>
+                                                            <ul class="list-group list-group-flush">
+                                                                <li class="list-group-item bg-transparent">PermisoA</li>
+                                                                <li class="list-group-item bg-transparent">PermisoD</li>
+                                                                <li class="list-group-item bg-transparent">PermisoE</li>
+                                                            </ul>
+                                                        </td>
+                                                      </tr>
+												</tbody>
+											</table>
+                                         <a class="btn btn-primary" href="{{url_for('permisos')}}" role="button">Ver Permisos</a>
+							</div>
+						</div>
+							</div>
+							<!-- /.card-body -->
+						</div>
+			</div>
+		</section>
+</div>
+
+<script src="{{url_for('static', filename='js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/adminlte.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.responsive.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/functions_actualizar.js')}}"></script>
+<script src="{{url_for('static', filename='js/sweetalert2.min.js')}}"></script>
+</html>
+{% endblock %}

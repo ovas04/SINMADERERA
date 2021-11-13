@@ -1,0 +1,223 @@
+{% extends "header_admin.html" %}
+{% block content %}
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1><i class="far fa-building"></i> {{ datos.1 }}</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="dashboard.html">Home</a></li>
+              <li class="breadcrumb-item active">{{ datos.1 }}</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+<!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title mt-2">Lista de las construcciones publicas</h3>
+                    <button class="btn btn-success ml-4" data-bs-toggle="modal" data-bs-target="#modal-construc" onclick="open_modal()"><i class="fas fa-plus-circle"></i> Nuevo</button>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="tab_constructoras" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th>Código</th>
+                                            <th>Info Obras</th>
+                                            <th>Entidad</th>
+                                            <th>Ubicación</th>
+                                            <th>Presupuesto</th>
+                                            <th>Modalidad</th>
+                                            <th>Estado</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <div class="modal fade" id="modal-det-construc" data-bs-backdrop="static" aria-modal="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Detalles de la construcción</h4>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <form id="form-construc_d">
+                                <input type="hidden" id="id_construc_d" name="id_construc_d">
+                                <div class="mb-3">
+                                    <label for="nom_construc_d" class="form-label">Entidad:</label>
+                                    <input type="text" id="nom_construc_d" class="form-control" name="nom_construc_d" readonly>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-5">
+                                        <label for="cod_infobras_d" class="form-label">Código Info Obras:</label>
+                                        <input type="text" id="cod_infobras_d" class="form-control" name="cod_infobras_d" readonly>
+                                    </div>
+                                    <div class="form-group col-md-7">
+                                        <label for="ubi_construc_d" class="form-label">Ubicación:</label>
+                                        <input type="text" id="ubi_construc_d" class="form-control" name="ubi_construc_d" readonly>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="descri_d" class="form-label">Descripción:</label>
+                                    <textarea id="descri_d" class="form-control" name="descri_d" rows=4 readonly></textarea>
+                                </div>                                
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="financ_d" class="form-label">Presupuesto:</label>
+                                        <input type="text" id="financ_d" class="form-control" name="financ_d" readonly>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="modalidad_d" class="form-label">Modalidad:</label>
+                                        <input type="text" id="modalidad_d" class="form-control" name="modalidad_d" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="estado_o_d" class="form-label">Estado Obra:</label>
+                                        <input type="text" id="estado_o_d" class="form-control" name="estado_o_d" readonly>                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="estado_d" class="form-label">Estado:</label>
+                                        <input type="test" id="estado_d" class="form-control" name="estado_d" readonly>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="mb-3">
+                                <h3>Mapa:</h3>
+                                <iframe class="mb-2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.2953924453627!2d-77.04981878507121!3d-12.023173444735834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf230af7b5e7%3A0x43ae74b7b59a27a0!2sUniversidad%20Nacional%20de%20Ingenier%C3%ADa!5e0!3m2!1ses!2spe!4v1623171503834!5m2!1ses!2spe" width="540" height="440" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                <button class="btn btn-success"><span class="fas fa-check"></span> Marcar Construcción</button>
+                                <button class="btn btn-primary"><span class="fas fa-file-export"></span> Exportar</button>
+                                <a class="btn btn-warning" href="{{url_for('actividad_construc_pub')}}" role="button"><span class="fas fa-chart-line"></span> Actividad</a>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <div class="modal fade" id="modal-construc" data-bs-backdrop="static" aria-modal="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Detalles de la construcción</h4>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="form-construc">
+                                <input type="hidden" id="id_construc" name="id_construc">
+                            <div class="mb-3">
+                                <label for="nom_construc" class="form-label">Entidad:</label>
+                                <input type="text" id="nom_construc" class="form-control" name="nom_construc" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <label for="cod_infobras" class="form-label">Código Info Obras:</label>
+                                    <input type="text" id="cod_infobras" class="form-control" name="cod_infobras" required>
+                                </div>
+                                <div class="form-group col-md-7">
+                                    <label for="ubi_construc" class="form-label">Ubicación:</label>
+                                    <input type="text" id="ubi_construc" class="form-control" name="ubi_construc" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="descri" class="form-label">Descripción:</label>
+                                <textarea id="descri" class="form-control" name="descri" rows=4 required></textarea>
+                            </div> 
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="tipo" class="form-label">Tipo:</label>
+                                    <input type="text" id="tipo" class="form-control" name="tipo" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="financ" class="form-label">Presupuesto:</label>
+                                    <input type="text" id="financ" class="form-control" name="financ" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="modalidad" class="form-label">Modalidad:</label>
+                                    <input type="text" id="modalidad" class="form-control" name="modalidad" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="estado" class="form-label">Estado:</label>
+                                    <input type="test" id="estado" class="form-control" name="estado" required>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-success btn-form"><span class="btn-text">Registrar</span></button>
+                      </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 2.0.1
+    </div>
+    <strong>Copyright &copy; 2021 <a href="#">WebMaster-ANR</a>.</strong> All rights
+    reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+</body>
+<script src="{{url_for('static', filename='js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/adminlte.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.responsive.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/functions_constructora2.js')}}"></script>
+<script src="{{url_for('static', filename='js/sweetalert2.min.js')}}"></script>
+</html>
+{% endblock %}

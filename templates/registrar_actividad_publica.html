@@ -1,0 +1,79 @@
+{% extends "header_admin.html" %}
+{% block content %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1><i class="fas fa-chart-line"></i> {{ datos.1 }}</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="<?php echo base_url() ?>/dashboard">Home</a></li>
+							<li class="breadcrumb-item active">{{ datos.1 }}</li>
+						</ol>
+					</div>
+				</div>
+			</div><!-- /.container-fluid -->
+		</section>
+
+		<!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title mt-1">Registrar Actividad en Construcción Pública</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <form id="form-reg_actividad">
+                                        <div class="mb-3">
+                                            <label for="comentario" class="form-label">Comentario:</label>
+                                            <textarea id="comentario" class="form-control" name="comentario" rows=5 required></textarea>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="name_c" class="form-label">Nombre de Contacto:</label>
+                                                <input type="text" id="name_c" class="form-control" name="name_c" required>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="num_c" class="form-label">Número de Contacto:</label>
+                                                <input type="text" id="num_c" class="form-control" name="num_c" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Tipo de Contacto:</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                  Empresa
+                                                </label>
+                                              </div>
+                                              <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                  Persona
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                          <button class="btn btn-warning">Registrar</button>
+                                        </div>
+                                      </form>
+                </div>
+            </section>
+</div>
+
+<script src="{{url_for('static', filename='js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/adminlte.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.responsive.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/functions_actualizar.js')}}"></script>
+<script src="{{url_for('static', filename='js/sweetalert2.min.js')}}"></script>
+</html>
+{% endblock %}

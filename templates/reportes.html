@@ -1,0 +1,116 @@
+{% extends "header_admin.html" %}
+{% block content %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1><i class="fas fa-user-cog"></i> {{ datos.1 }}</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{{ url_for('dashboard') }}">Home</a></li>
+            <li class="breadcrumb-item active">{{ datos.1 }}</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title mt-2">Observa los reportes de las ventas y empleados</h3>
+          <button class="btn btn-success ml-4" data-bs-toggle="modal" data-bs-target="#modal-mapa" onclick="open_modal()"><i class="fas fa-map-marker-alt"></i> Generar Reportes</button>
+        </div>
+        <div class="card-body">
+          Start creating your amazing application!
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+      <div class="modal fade" id="modal-mapa" data-bs-backdrop="static" aria-modal="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Información de Reporte</h4>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <h3>Vista Power BI:</h3>
+                    <iframe width="550" height="450.5" src="https://app.powerbi.com/view?r=eyJrIjoiNTgzMGYwNDctMzAwZS00NzM5LWE2NjktYzhhYWZhYTAxNWQ2IiwidCI6IjFlYmE0NDNmLTIzZTUtNDUzNC05MGQxLTA5NzZhYWJlODZhYyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <h3>Mapa:</h3>
+                    <iframe class="mb-2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.2953924453627!2d-77.04981878507121!3d-12.023173444735834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf230af7b5e7%3A0x43ae74b7b59a27a0!2sUniversidad%20Nacional%20de%20Ingenier%C3%ADa!5e0!3m2!1ses!2spe!4v1623171503834!5m2!1ses!2spe" width="540" height="440" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <form action="">
+                      <div class="mb-3">
+                        <label for="nom_arch">Nombre del archivo:</label>
+                        <input type="text" class="form-control" id="nom_arch" name="nom_arch">
+                      </div>
+                      <div class="mb-3">
+                        <label for="destino">Destino:</label>
+                        <input type="text" class="form-control" id="destino" name="destino">
+                      </div>
+                      <div class="mb-3">
+                        <button class="btn btn-warning"><span class="fas fa-file-export"></span> Exportar</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+    </div>
+  </section>
+  <!-- /.content -->
+
+</div>
+<!-- /.content-wrapper -->
+<footer class="main-footer">
+  <div class="float-right d-none d-sm-block">
+    <b>Version</b> 2.0.1
+  </div>
+  <strong>Copyright &copy; 2021 <a href="#">WebMaster-ANR</a>.</strong> All rights
+  reserved.
+</footer>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+</body>
+<script src="{{url_for('static', filename='js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/adminlte.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.responsive.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/functions_reporte.js')}}"></script>
+<script src="{{url_for('static', filename='js/sweetalert2.min.js')}}"></script>
+
+</html>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "header_admin.html" %}
+{% block content %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1><i class="fas fa-id-card-alt"></i> {{ datos.1 }}</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="<?php echo base_url() ?>/dashboard">Home</a></li>
+							<li class="breadcrumb-item active">{{ datos.1 }}</li>
+						</ol>
+					</div>
+				</div>
+			</div><!-- /.container-fluid -->
+		</section>
+	
+	<!-- Main content -->
+	<section class="content">
+		<div class="container-fluid">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title mt-1">Lista de Permisos</h3>
+				</div>
+				<!-- /.card-header -->
+				<div class="card-body">
+					<div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+						<div class="row">
+							<div class="col-sm-12">
+								<table id="tab_permisos" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+									<thead>
+										<tr role="row">
+											<th>#</th>
+											<th>Nombres</th>
+											<th>Descripción</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+                                            <th scope="row">1</th>
+                                            <td>PermisoA</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro suscipit eum, obcaecati minus voluptate modi praesentium rem sunt quae odio odit unde. Eveniet ad mollitia quasi doloribus eligendi perspiciatis culpa.</td>                                                       
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>PermisoB</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro suscipit eum, obcaecati minus voluptate modi praesentium rem sunt quae odio odit unde. Eveniet ad mollitia quasi doloribus eligendi perspiciatis culpa.</td>                                                       
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+    		                                <td>PermisoC</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro suscipit eum, obcaecati minus voluptate modi praesentium rem sunt quae odio odit unde. Eveniet ad mollitia quasi doloribus eligendi perspiciatis culpa.</td>                                                       
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>PermisoD</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro suscipit eum, obcaecati minus voluptate modi praesentium rem sunt quae odio odit unde. Eveniet ad mollitia quasi doloribus eligendi perspiciatis culpa.</td>                                                       
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>PermisoE</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro suscipit eum, obcaecati minus voluptate modi praesentium rem sunt quae odio odit unde. Eveniet ad mollitia quasi doloribus eligendi perspiciatis culpa.</td>                                                       
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>PermisoF</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro suscipit eum, obcaecati minus voluptate modi praesentium rem sunt quae odio odit unde. Eveniet ad mollitia quasi doloribus eligendi perspiciatis culpa.</td>                                                       
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>PermisoG</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro suscipit eum, obcaecati minus voluptate modi praesentium rem sunt quae odio odit unde. Eveniet ad mollitia quasi doloribus eligendi perspiciatis culpa.</td>                                                       
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>PermisoH</td>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro suscipit eum, obcaecati minus voluptate modi praesentium rem sunt quae odio odit unde. Eveniet ad mollitia quasi doloribus eligendi perspiciatis culpa.</td>                                                       
+                                        </tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.card-body -->
+			</div>
+		</div>
+	</section>
+</div>
+<script src="{{url_for('static', filename='js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/adminlte.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.responsive.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/functions_actualizar.js')}}"></script>
+<script src="{{url_for('static', filename='js/sweetalert2.min.js')}}"></script>
+</html>
+{% endblock %}

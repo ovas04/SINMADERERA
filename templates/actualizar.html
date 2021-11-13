@@ -1,0 +1,165 @@
+{% extends "header_admin.html" %}
+{% block content %}
+	<!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1><i class="fas fa-user-cog"></i> {{ datos.1 }}</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="{{ url_for('dashboard') }}">Home</a></li>
+                            <li class="breadcrumb-item active">{{ datos.1 }}</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="card">
+		                    <div class="card-header">
+		                        <h3 class="card-title mt-1">Actualizaciones privadas</h3>
+		                        <button class="btn btn-sm btn-primary ml-4 btn-actualizar"><i class="fas fa-plus-circle"></i> Actualizar</button>
+		                    </div>
+		                    <!-- /.card-header -->
+		                    <div class="card-body">
+		                        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+		                            <div class="row">
+		                                <div class="col-sm-12">
+		                                    <table id="tab_actualizaciones_priv" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+		                                        <thead>
+		                                            <tr role="row">
+		                                                <th>ID</th>
+		                                                <th>Última actualización</th>
+		                                            </tr>
+		                                        </thead>
+		                                        <tbody>
+		                                          
+		                                        </tbody>
+		                                    </table>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+                    		<!-- /.card-body -->
+                		</div>                
+					</div>
+					<div class="col-md-6">
+						<div class="card">
+		                    <div class="card-header">
+		                        <h3 class="card-title mt-1">Actualizaciones públicas</h3>
+		                        <button class="btn btn-sm btn-danger ml-4" data-bs-toggle="modal" data-bs-target="#modal-actualizar" onclick="open_modal()"><i class="fas fa-plus-circle"></i> Actualizar</button>
+		                    </div>
+		                    <!-- /.card-header -->
+		                    <div class="card-body">
+		                        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+		                            <div class="row">
+		                                <div class="col-sm-12">
+		                                    <table id="tab_actualizaciones_pub" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+		                                        <thead>
+		                                            <tr role="row">
+		                                                <th>ID</th>
+		                                                <th>Última actualización</th>
+		                                            </tr>
+		                                        </thead>
+		                                        <tbody>
+		                                          
+		                                        </tbody>
+		                                    </table>
+		                                </div>
+		                            </div>
+		                        </div>
+	                    	</div>
+	                    	<!-- /.card-body -->
+	                	</div>
+					</div>
+				</div>	
+
+                <div class="modal fade" id="modal-actualizar" data-bs-backdrop="static" aria-modal="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Actualizar construcciones</h4>
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="form-actualizar">
+                                	<div class="mb-3">
+                                        <label for="tipo" class="form-label">Tipo archivo:</label>
+                                        <div class="input-group">
+                                        	<span class="input-group-text"><i class="fas fa-file"></i></span>
+                                        	<select name="tipo" id="tipo" class="form-select">
+                                            	<option value="1">Documento</option>
+                                            	<option value="2">Link</option>
+                                        	</select>
+                                    	</div>
+                                    </div>
+                                    <div class="mb-3 archivo">
+                                    	<label for="archivo" class="form-label">Archivo:</label>
+                                    	<div class="input-group">
+										    <span class="input-group-text"><i class="fas fa-file-upload"></i></span>
+										    <input type="file" id="archivo" class="form-control" name="archivo" required>
+										</div>
+                                    </div>
+                                    <div class="mb-3 link" style="display: none;">
+                                    	<label for="link" class="form-label">Link:</label>
+                                    	<div class="input-group">
+										    <span class="input-group-text"><i class="fas fa-link"></i></span>
+										    <textarea class="form-control" name="link" id="link" cols="3"></textarea>
+										</div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-success btn-form"><span class="btn-text">Actualizar</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+	<footer class="main-footer">
+        <div class="float-right d-none d-sm-block">
+            <b>Version</b> 2.0.1
+        </div>
+        <strong>Copyright &copy; 2021 <a href="#">WebMaster-ANR</a>.</strong> All rights
+    reserved.
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+    </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+</body>
+<script src="{{url_for('static', filename='js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/adminlte.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.responsive.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/functions_actualizar.js')}}"></script>
+<script src="{{url_for('static', filename='js/sweetalert2.min.js')}}"></script>
+</html>
+{% endblock %}
